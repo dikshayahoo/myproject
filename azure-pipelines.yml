@@ -10,10 +10,9 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
 - script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'build stage for function app'
+    echo This is build pipeline
+    ls -la
+    pwd
+    cat add.js
+  displayName: 'Build stage for function app'
