@@ -15,4 +15,10 @@ steps:
     ls -la
     pwd
     cat add.js
+    cp add.js $(Build.ArtifactStagingDirectory)/.
   displayName: 'Build stage for function app'
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'jsdev'
+    publishLocation: 'Container'
