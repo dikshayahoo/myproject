@@ -22,3 +22,11 @@ steps:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'jsdev'
     publishLocation: 'Container'
+- task: AzureFunction@1
+  inputs:
+    function: 'https://jsappdep.azurewebsites.net/api/helloworld?code=d8omNnQguuxNQ/PpAb7nYlm2fmz4p1uKmyy8WJOJlVMpVTlmaQYvJQ=='
+    key: 'wf4fIwo316wz2SWpyGpxNuK7sNQxGAs50FA16D6oeAJ6Poi8GwLt1A=='
+    method: 'POST'
+    body: '{"firstnum":2,
+      "second":3}'
+    waitForCompletion: 'false'
